@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.body {
+  background-color: #1f2937;
+}
+
 .switch {
   position: relative;
   display: inline-block;

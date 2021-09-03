@@ -63,14 +63,14 @@ function App() {
       <div
         className={`${
           checked ? "dark" : null
-        } w-screen h-screen  flex flex-wrap justify-center justify-items-center`}
+        } w-screen min-h-screen h-full  flex flex-wrap justify-center justify-items-center`}
       >
         <header className="flex pl-5 items-center justify-between font-sans text-2xl font-bold text-red-400 bg-gray-800 h-24 w-full">
           I'm a Blogger now
           <User setShow={setShow} />
         </header>
         <Login show={show} setUser={setUser} />
-        <div className="dark:bg-gray-700 h-screen self-center w-full flex flex-wrap justify-center font-sans">
+        <div className="dark:bg-gray-700 min-h-screen h-full self-center w-full flex flex-wrap justify-center font-sans">
           <div className="w-full mt-5 mx-10 mb-0 flex justify-end">
             <label className="switch">
               <input
