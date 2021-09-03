@@ -70,7 +70,7 @@ function App() {
           <User setShow={setShow} />
         </header>
         <Login show={show} setUser={setUser} />
-        <div className="dark:bg-gray-700 self-center w-full flex flex-wrap justify-center font-sans">
+        <div className="dark:bg-gray-700 h-screen self-center w-full flex flex-wrap justify-center font-sans">
           <div className="w-full mt-5 mx-10 mb-0 flex justify-end">
             <label className="switch">
               <input

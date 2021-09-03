@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./index.css";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { saveComment } from "./sandbox";
 import { UserContext } from "./App";
 
@@ -15,7 +15,6 @@ export default function NewComment({ adminInfo, postid, setNewComment }) {
         setNewComment((prev) => false);
       })
       .catch((err) => {
-        console.log(err);
         setError((prev) => err);
       });
   };
