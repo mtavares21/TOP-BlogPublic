@@ -3,13 +3,16 @@ import { useReducer } from "react";
 // Login to Blog-API and get user details
 async function logIn(user) {
   try {
-    const data = await fetch("http://localhost:5000/v1/users/login", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user), // body data type must match "Content-Type" header
-    });
+    const data = await fetch(
+      "https://gentle-refuge-60877.herokuapp.com/v1/users/login",
+      {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user), // body data type must match "Content-Type" header
+      }
+    );
     const parsedData = await data.json();
     return parsedData;
   } catch (err) {
@@ -20,13 +23,16 @@ async function logIn(user) {
 // Create User (sign-up)
 // User = { username:, password:}
 async function createUser(userInfo) {
-  const response = await fetch(`http://localhost:5000/v1/users/signup`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userInfo),
-  });
+  const response = await fetch(
+    `https://gentle-refuge-60877.herokuapp.com/v1/users/signup`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    }
+  );
   const user = await response.json();
 
   return user;
@@ -35,13 +41,16 @@ async function createUser(userInfo) {
 // GET posts
 async function getPosts(adminInfo) {
   const userInfo = await adminInfo;
-  const response = await fetch("http://localhost:5000/v1/posts/?published", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + userInfo.token,
-    },
-  });
+  const response = await fetch(
+    "https://gentle-refuge-60877.herokuapp.com/v1/posts/?published",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + userInfo.token,
+      },
+    }
+  );
   const posts = await response.json();
 
   return posts;
@@ -51,7 +60,7 @@ async function getPosts(adminInfo) {
 async function getComments(user, postId) {
   // prettier-ignore
   const response = await fetch(
-    `http://localhost:5000/v1/comments/?postid=${encodeURIComponent(postId)}&username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
+    `https://gentle-refuge-60877.herokuapp.com/v1/comments/?postid=${encodeURIComponent(postId)}&username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
     {
       method: "GET",
       headers: {
@@ -68,7 +77,7 @@ async function getComments(user, postId) {
 async function saveComment(postid, user, text) {
   // prettier-ignore
   const response = await fetch(
-    `http://localhost:5000/v1/comments/?postid=${postid}`,
+    `https://gentle-refuge-60877.herokuapp.com/v1/comments/?postid=${postid}`,
     {
       method: "POST",
       headers: {
@@ -91,7 +100,7 @@ async function saveComment(postid, user, text) {
 async function updateComment(id, user, text) {
   // prettier-ignore
   const response = await fetch(
-    `http://localhost:5000/v1/comments/${id}/?username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
+    `https://gentle-refuge-60877.herokuapp.com/v1/comments/${id}/?username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
     {
       method: "PUT",
       headers: {
@@ -113,7 +122,7 @@ async function updateComment(id, user, text) {
 async function deleteComment(user, id) {
   // prettier-ignore
   const response = await fetch(
-    `http://localhost:5000/v1/comments/${encodeURIComponent(id)}/?username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
+    `https://gentle-refuge-60877.herokuapp.com/v1/comments/${encodeURIComponent(id)}/?username=${encodeURIComponent(user.username)}&password=${encodeURIComponent(user.password)}`,
     {
       method: "DELETE",
       headers: {
