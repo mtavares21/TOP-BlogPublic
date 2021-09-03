@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/TOP-BlogPublic/static/css/main.de5146d9.chunk.css",
-    "main.js": "/TOP-BlogPublic/static/js/main.1329c783.chunk.js",
-    "main.js.map": "/TOP-BlogPublic/static/js/main.1329c783.chunk.js.map",
+    "main.css": "/TOP-BlogPublic/static/css/main.4d869a8f.chunk.css",
+    "main.js": "/TOP-BlogPublic/static/js/main.a0491ec9.chunk.js",
+    "main.js.map": "/TOP-BlogPublic/static/js/main.a0491ec9.chunk.js.map",
     "runtime-main.js": "/TOP-BlogPublic/static/js/runtime-main.87937941.js",
     "runtime-main.js.map": "/TOP-BlogPublic/static/js/runtime-main.87937941.js.map",
     "static/js/2.c65d8f65.chunk.js": "/TOP-BlogPublic/static/js/2.c65d8f65.chunk.js",
     "static/js/2.c65d8f65.chunk.js.map": "/TOP-BlogPublic/static/js/2.c65d8f65.chunk.js.map",
     "index.html": "/TOP-BlogPublic/index.html",
-    "static/css/main.de5146d9.chunk.css.map": "/TOP-BlogPublic/static/css/main.de5146d9.chunk.css.map",
+    "static/css/main.4d869a8f.chunk.css.map": "/TOP-BlogPublic/static/css/main.4d869a8f.chunk.css.map",
     "static/js/2.c65d8f65.chunk.js.LICENSE.txt": "/TOP-BlogPublic/static/js/2.c65d8f65.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.87937941.js",
     "static/js/2.c65d8f65.chunk.js",
-    "static/css/main.de5146d9.chunk.css",
-    "static/js/main.1329c783.chunk.js"
+    "static/css/main.4d869a8f.chunk.css",
+    "static/js/main.a0491ec9.chunk.js"
   ]
 }
