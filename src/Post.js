@@ -15,14 +15,12 @@ export default function Post({ id, adminInfo, postId, title, text, date }) {
   const user = useContext(UserContext);
 
   useEffect(() => {
-    console.log(user);
     if (showComments) {
       getComments(user, postId)
         .then((response) => {
           setComments((prev) => response);
         })
         .catch((err) => {
-          console.log(err);
           setError((prev) => true);
         })
         .finally(() => {
@@ -79,7 +77,7 @@ export default function Post({ id, adminInfo, postId, title, text, date }) {
       );
     } else return null;
   };
-  console.log(user);
+
   return (
     <div className="dark:bg-gray-700 container mt-10 md:w-2/3 flex flex-wrap items-center justify-center bg-white">
       <div className="container mt-10 mb-2 flex flex-wrap justify-center items-center">
