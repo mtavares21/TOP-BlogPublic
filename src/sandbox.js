@@ -1,5 +1,3 @@
-import { useReducer } from "react";
-
 // Login to Blog-API and get user details
 async function logIn(user) {
   try {
