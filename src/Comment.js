@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./index.css";
-import { updateComment, deleteComment } from "./sandbox";
+import { updateComment, deleteComment } from "./blog_api";
 import { UserContext } from "./App";
 
 export default function Comment({ id, text, author, date }) {
@@ -11,14 +11,14 @@ export default function Comment({ id, text, author, date }) {
   const user = useContext(UserContext);
 
   const handleDeleteComment = () => {
-    deleteComment(user, id)
+    deleteComment(user.token, id)
       .then(setDeleted(true))
       .catch((err) => setError((prev) => err))
       .finally(() => setEditable(false));
   };
   const handleUpdateComment = (e) => {
     const text = e.target.form[0].value;
-    updateComment(id, user, text)
+    updateComment(id, user.token, text)
       .then((response) => {
         setInputText((prev) => text);
       })
@@ -30,7 +30,7 @@ export default function Comment({ id, text, author, date }) {
       key={id}
       className={`${
         deleted ? "hidden" : "flex"
-      } container w-full p-5 pr-10 max-h-42 mb-3 grid items-center justify-center bg-red-400 rounded-full text-white`}
+      } container w-full p-5 pr-10 mt-5 max-h-42 mb-3 grid items-center justify-center bg-red-400 rounded-full text-white`}
     >
       <form className="md:w-full">
         <div className="my-2 w-full max-h-40 flex flex-wrap items-start justify-center ">
